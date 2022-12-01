@@ -7,6 +7,10 @@ class AdministracionView(TemplateView):
     template_name = "administracion/index.html"
     extra_context = {"classrooms": ClassRoom.objects.all()}
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["classrooms"] = ClassRoom.objects.all()
+        return context
 
 class ClassRoomCreate(FormView):
     model = ClassRoom
