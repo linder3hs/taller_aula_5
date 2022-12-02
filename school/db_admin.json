@@ -1,0 +1,71 @@
+[
+  {
+    "model": "administracion.classroom",
+    "pk": 1,
+    "fields": {
+      "name": "A",
+      "start_time": "08:00:00"
+    }
+  },
+  {
+    "model": "administracion.classroom",
+    "pk": 2,
+    "fields": {
+      "name": "B",
+      "start_time": "08:15:00"
+    }
+  },
+  {
+    "model": "administracion.classroom",
+    "pk": 3,
+    "fields": {
+      "name": "C",
+      "start_time": "09:00:00"
+    }
+  },
+  {
+    "model": "administracion.classroom",
+    "pk": 6,
+    "fields": {
+      "name": "D",
+      "start_time": "10:15:00"
+    }
+  },
+  {
+    "model": "administracion.student",
+    "pk": 1,
+    "fields": {
+      "first_name": "Flavio",
+      "last_name": "Alvarado",
+      "born_date": "2002-10-12",
+      "classroom_id": 1,
+      "grade_lab": 19.0,
+      "grade_exam": 17.0,
+      "grade_final": 18.0
+    }
+  },
+  {
+    "model": "administracion.student",
+    "pk": 2,
+    "fields": {
+      "first_name": "Pepe",
+      "last_name": "Zapata",
+      "born_date": "2001-10-12",
+      "classroom_id": 1,
+      "grade_lab": 14.0,
+      "grade_exam": 15.0,
+      "grade_final": 18.0
+    }
+  },
+  {
+    "model": "administracion.teacher",
+    "pk": 1,
+    "fields": {
+      "first_name": "Linder",
+      "last_name": "Hassinger",
+      "born_date": "1881-05-10",
+      "salary": 1000000.0,
+      "rating": 3.4
+    }
+  }
+]

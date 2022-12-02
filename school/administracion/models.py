@@ -60,3 +60,20 @@ class TeacherProxy(Teacher):
 
     def get_bonnus(self):
         return self.salary + self.rating * 100
+
+
+class Book(models.Model):
+    title = models.CharField(max_length=400)
+    authors = models.CharField(max_length=400)
+    average_rating = models.CharField(max_length=200)
+    isbn = models.CharField(max_length=200)
+    isbn13 = models.CharField(max_length=200)
+    language_code = models.CharField(max_length=200)
+    num_pages = models.CharField(max_length=200)
+    ratings_count = models.IntegerField(default=0)
+    text_reviews_count = models.IntegerField(default=0)
+    publication_date = models.DateField()
+    publisher = models.CharField(max_length=200)
+
+    class Meta:
+        db_table = "books"
