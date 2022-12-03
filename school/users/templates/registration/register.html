@@ -1,0 +1,21 @@
+{% extends "../base.html" %} {% block content %}
+
+<div class="mt-5">
+  <div class="card" style="width: 50%; margin: auto">
+    <div class="card-body">
+      <h2>Register</h2>
+      <form method="post" novalidate>
+        {% csrf_token %} {{ form.as_p }}
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Crear Usuario</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  const inputs = document.querySelectorAll("input");
+
+  inputs.forEach((input) => input.classList.add("form-control"));
+</script>
+{% endblock content %}

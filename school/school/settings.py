@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'administracion.apps.AdministracionConfig',
-    'library.apps.LibraryConfig'
+    'library.apps.LibraryConfig',
+    'users.apps.UsersConfig'
 ]
 
 MIDDLEWARE = [
@@ -109,9 +110,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Lima'
 
 USE_I18N = True
 
@@ -127,3 +128,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# SESSIONS_ENGINE='django.contrib.sessions.backends.cache'
+
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+#         "LOCATION": ["127.0.0.1:11211", "127.0.0.2:11212"],
+#     }
+# }
+
+# Podemos modificar a donde ira el login y tambien vamos a definir quien es login
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = "index"

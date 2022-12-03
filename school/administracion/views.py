@@ -1,21 +1,25 @@
 from django.shortcuts import redirect, render
 from .models import ClassRoom, Book
 from django.views.generic import TemplateView, FormView, View
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from .forms import ClassRoomForm
+from django.utils import timezone
 import urllib.request
 import datetime
 import json
 
-class AdministracionView(TemplateView):
+class AdministracionView(LoginRequiredMixin, TemplateView):
     template_name = "administracion/index.html"
     extra_context = {"classrooms": ClassRoom.objects.all()}
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["classrooms"] = ClassRoom.objects.all()
+        context["hora_actual"] = timezone.localtime
         return context
 
-class ClassRoomCreate(FormView):
+class ClassRoomCreate(LoginRequiredMixin, FormView):
     model = ClassRoom
     template_name = "administracion/create.html"
     form_class = ClassRoomForm
@@ -25,13 +29,14 @@ class ClassRoomCreate(FormView):
         return redirect("index")
 
 
+@login_required
 def deleteClassRoom(request, id):
     classroom = ClassRoom.objects.get(id=id)
     classroom.delete()
     return redirect("index")
 
 
-class BookView(View):
+class BookView(LoginRequiredMixin, View):
     def get(self, request):
         response = urllib.request.urlopen("https://silabuzinc.github.io/books/books.json")
         books = json.loads(response.read())

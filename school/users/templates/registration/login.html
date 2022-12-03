@@ -1,0 +1,28 @@
+{% extends "../base.html" %} {% block content %}
+
+<div class="mt-5">
+    <div class="card" style="width: 30%; margin: auto">
+      <div class="card-body">
+        <h2>Login</h2>
+        <form method="post" novalidate>
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-12 mt-4">
+              <input type="text" name="username" class="form-control" />
+            </div>
+            <div class="col-12 mt-3">
+              <input type="password" name="password" class="form-control" />
+            </div>
+            <div class="col-12 d-grid mt-3">
+              <button type="submit" class="btn btn-primary">
+                Iniciar Session
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {% endblock content %}
+</div>
