@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+<ul>
+  <li>{{book.title}}</li>
+
+  <li>{{book.average_rating}}</li>
+  <li>{{book.isbn}}</li>
+</ul>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+<script>
+  const inputs = document.querySelectorAll("input");
+
+  inputs.forEach((input) => {
+    input.classList.add("form-control");
+  });
+</script>
+{% endblock %}
