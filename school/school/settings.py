@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-m=_rrmsxa-&we5oe2*$+#o4(@=b^pd7c8!6y=nd)=$f4j6-k14
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -51,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'users.middleware.is_valid_ip',
+    'users.middleware.IPIsValid',
 ]
 
 ROOT_URLCONF = 'school.urls'
