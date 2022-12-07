@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # 'users.middleware.is_valid_ip',
-    'users.middleware.IPIsValid',
+    # 'users.middleware.IPIsValid',
 ]
 
 ROOT_URLCONF = 'school.urls'
